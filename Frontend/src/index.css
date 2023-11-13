@@ -1,0 +1,41 @@
+html{
+  min-height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(./windsurfing-wallpaper.jpg), url(./windsurfing-wallpaper2.jpg) center no-repeat;
+  background-size: 100%;
+  /* background-position: top; */
+  background-color: #94edff;
+  min-height: 100%;
+}
+form{
+  padding: 20px;
+  margin-top:60px;
+}
+form button,form h5{
+  margin:20px 0;
+}
+input[tye=text]:not(.browser-default):focus:not([readonly]),
+input[tye=password]:not(.browser-default):focus:not([readonly]),
+input[tye=email]:not(.browser-default):focus:not([readonly]){
+  border-color: #ec407a;
+  box-shadow: 1;
+}
+
+
+
+
+
+.home .post img{
+  position: absolute;
+  top: 0px;
+  left: -100px;
+  opacity: 0.6;
+}
+.home .post{
+  overflow: hidden;
+  padding-left: 90px;
+}

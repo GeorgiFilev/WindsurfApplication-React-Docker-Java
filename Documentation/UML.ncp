@@ -1,0 +1,218 @@
+<Project>
+  <Name>UML</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>UML</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Person</Name>
+        <Access>Public</Access>
+        <Location left="132" top="632" />
+        <Size width="424" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private UUID personID</Member>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private String password</Member>
+        <Member type="Field">private Country country</Member>
+        <Member type="Field">private String email</Member>
+        <Member type="Field">private boolean isAdmin</Member>
+        <Member type="Field">private List&lt;Post&gt; posts</Member>
+        <Member type="Constructor">public Person(String name, String email, String password)</Member>
+        <Member type="Method">public UUID getID()</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public String getPassword()</Member>
+        <Member type="Method">public Country getCountry()</Member>
+        <Member type="Method">public String getEmail()</Member>
+        <Member type="Method">public bool getIsAdmin()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public void setPassword(String Password)</Member>
+        <Member type="Method">public void setCountry(Country country)</Member>
+        <Member type="Method">public void setEmail(String email)</Member>
+        <Member type="Method">public void setIsAdmin(boolean admin)</Member>
+        <Member type="Method">public String toString(String name, String email, Country country, boolean isAdmin)</Member>
+        <Member type="Method">public List&lt;Post&gt; getPosts()</Member>
+        <Member type="Method">public void addPost(String title, String content)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Country</Name>
+        <Access>Public</Access>
+        <Location left="694" top="704" />
+        <Size width="233" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private String abv</Member>
+        <Member type="Constructor">public Country(int id, String name, String abv)</Member>
+        <Member type="Method">public int getID()</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public String getAbbreviation()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Post</Name>
+        <Access>Public</Access>
+        <Location left="1035" top="834" />
+        <Size width="192" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private UUID postID</Member>
+        <Member type="Field">private String title</Member>
+        <Member type="Field">private String content</Member>
+        <Member type="Constructor">public Post(String title, String content)</Member>
+        <Member type="Method">public UUID getID()</Member>
+        <Member type="Method">public String getTitle()</Member>
+        <Member type="Method">public String getContent()</Member>
+        <Member type="Method">public void setTitile(String title)</Member>
+        <Member type="Method">public void setContent(String content)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UserDatabase</Name>
+        <Access>Public</Access>
+        <Location left="557" top="96" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static List&lt;Person&gt; ListPeople</Member>
+        <Member type="Field">private static List&lt;Country&gt; ListCountries</Member>
+        <Member type="Field">private static List&lt;Post&gt; ListPosts</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>UserInterface</Name>
+        <Access>Public</Access>
+        <Location left="37" top="63" />
+        <Size width="368" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">boolean createPerson(String name, String password, String email)</Member>
+        <Member type="Method">boolean deletePerson(UUID uuid)</Member>
+        <Member type="Method">Person getPerson(UUID uuid)</Member>
+        <Member type="Method">void updatePerson(UUID uuid, String name, String password, Country country, String email)</Member>
+        <Member type="Method">List&lt;Person&gt; getAllPeople()</Member>
+        <Member type="Method">boolean createCountry(int id, String name, String abv)</Member>
+        <Member type="Method">void deleteCountry(int countryID)</Member>
+        <Member type="Method">Country getCountry(int countryId)</Member>
+        <Member type="Method">List&lt;Country&gt; getAllCountries()</Member>
+        <Member type="Method">void makeAdmin(UUID person)</Member>
+        <Member type="Method">void createPost(UUID personID, String title, String content)</Member>
+        <Member type="Method">void deletePost(UUID postID)</Member>
+        <Member type="Method">Post getPersonPost(UUID personID, UUID postID)</Member>
+        <Member type="Method">List&lt;Post&gt; getAllPersonPosts(UUID personID)</Member>
+        <Member type="Method">List&lt;Post&gt; getAllPostsByCountry(int countryID)</Member>
+        <Member type="Method">List&lt;Post&gt; getAllPosts()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Service</Name>
+        <Access>Public</Access>
+        <Location left="870" top="30" />
+        <Size width="527" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private final UserInterface database</Member>
+        <Member type="Method">public void createPerson(String name, String password, String email)</Member>
+        <Member type="Method">public void deletePerson(UUID personID)</Member>
+        <Member type="Method">public Person getPerson(UUID personID)</Member>
+        <Member type="Method">public void updatePerson(UUID personID, String name, String password, Country country, String email)</Member>
+        <Member type="Method">public List&lt;Person&gt; getAllPeople()</Member>
+        <Member type="Method">public void createCountry(int id, String name, String abv)</Member>
+        <Member type="Method">public void deleteCountry(int id)</Member>
+        <Member type="Method">public Country getCountry(int id)</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Member type="Method">public void newMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UserController</Name>
+        <Access>Public</Access>
+        <Location left="1344" top="477" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="3" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>implements</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>858</X>
+          <Y>396</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>users</EndRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>countries</EndRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>841</X>
+          <Y>166</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1420</X>
+          <Y>452</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1229</X>
+          <Y>394</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>posts</EndRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>country</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

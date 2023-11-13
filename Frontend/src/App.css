@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+input{
+  margin-left: 5px;
+  padding-left: 5px;
+}
+.ark{
+  padding: 5px;
+  margin: 6%;
+}
+.message{
+  margin: 5px;
+  padding: 5px;
+  color: blue;
+  width: 125%;
+}
+.container{
+  padding: 0 1rem;
+}
+.btn{
+  /* display :inline-block; */
+  border: none;
+  background: #555;
+  color: #fff;
+  /* padding: 7px 20px; */
+  cursor: pointer;
+}
+.btn:hover{
+  background: #666;
+}
+.abzatz{
+  border-radius: 25px;
+  background: #e09320;
+  padding: 3px;
+  padding-left: 5px;
+}
+.krug{
+  display: flex;
+  align-content:center;
+  justify-content: center;
+}
+.opitai{
+  align-items: center;
+  display: flex;
+}

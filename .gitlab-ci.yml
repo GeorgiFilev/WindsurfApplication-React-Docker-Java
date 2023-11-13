@@ -1,0 +1,37 @@
+image: maven:3-jdk-11
+stages:
+  - build
+  - test
+  - sonarqube
+  - deploy
+build:
+  stage: build
+  script:
+    - ./mvnw clean install
+    - ./mvnw compiler:compile
+test:
+  stage: test
+  script:
+    - ./mvnw test
+sonarqube:
+  stage: sonarqube
+  dependencies:
+    - test
+  script:
+    - mvn verify sonar:sonar
+deploy:
+  stage: deploy
+  script:
+    
+    - docker build -t reactapp:dev .
+    - docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true reactapp:dev
+   
+    - docker build -t backend .
+    - docker run -p 8080:8080 -e "JAVA_OPTS=-Debug -Xmx128m" backend:latest
+
+    - docker build -t reactapp:dev .
+    - docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true reactapp:dev
+   
+after_script:
+    - echo "End CI"
+
